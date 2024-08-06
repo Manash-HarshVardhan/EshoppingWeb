@@ -1,0 +1,116 @@
+@import "mixin.scss";
+@import "var.scss";
+
+.msprod{
+    padding-top: 80px;
+    padding-bottom: 80px;
+    &--container{
+        @include container(auto,40px);
+        &--title{
+         @include   mixtitle();
+        }
+        &--singlecard{
+            // width: 400px;
+            border-radius: 10px;
+            // height: 100%;
+            position: relative;
+            &--thumbnail{
+                cursor: none;
+                background-color: $cardbg;
+                text-align: center;
+                border-radius: 10px;
+                position: relative;
+                overflow: hidden;
+            }
+            &--thumbnail:nth-child(1){
+                width: 29.5vw;
+                border-radius: 10px;
+                max-width: 100%;
+            }
+            &--thumbnail>img{
+                transition: all 0.3s;
+            }
+
+            &--thumbnail:hover>img{
+                // border: 3px solid blue;
+                transform: scale(1.2);
+            }
+
+            &--titlewrap{
+                margin-top: 16px;
+                @include flex(row,space-between)
+            }
+            &--para{
+                margin: 10px 0;
+                font-size: 12px;
+                line-height: 16.5px;
+            }
+            &--rating{
+                @include flex(row,center);
+                justify-content: start;
+                margin-bottom: 15px;
+            }
+        }
+    }
+    &--cardsholder{
+        @include flex(row,space-between);
+        gap: 18px;
+        overflow-x: scroll;
+    }
+    &--cardsholder::-webkit-scrollbar{
+        display: none;
+    }
+
+
+    &--wishlist{
+        width: 40px;
+        height: 40px;
+        background-color: $primarycolor;
+        border-radius: 100px;
+        @include flex(row,center);
+        position: absolute;
+        top: 16px;
+        
+        right: 16px;
+    }
+}
+
+.abcbtn{
+     @include buttnmix(transparent);
+//      margin-top: 30px;
+//    padding: 13px 23px;
+    border: 1px solid black;
+    padding: 5px 10px;
+    &--txt{
+        color: black;
+        font-family: Eina01, sans-serif;
+        font-size: 14px;
+        line-height: 14px;
+        font-weight: 600;
+    }
+}
+.abcbtn:hover .abcbtn--txt{
+   
+    color: white;
+    
+}
+.abcbtn:hover{
+    background-color: $secondarycolor;
+}
+@media screen and (max-width: 767px) {
+    .msprod {
+        padding-top: 40px;
+        padding-bottom: 40px;
+        &--container{
+            padding: 0 15px;
+            &--singlecard{
+                &--thumbnail:nth-child(1){
+                    width: auto;
+                   
+                }
+            }
+        }
+        
+
+    }
+}

@@ -1,0 +1,84 @@
+@import "mixin.scss";
+@import "var.scss";
+
+.trendproduct{
+    padding-bottom: 80px;
+    &--container{
+        // border: 3px solid brown;
+        @include container(auto,40px);
+        &--title{
+            @include mixtitle();
+        }
+        &--cardscontainer{
+            grid-column-gap: 23px;
+            grid-row-gap: 16px;
+            grid-template-columns: repeat(2,1fr);
+            grid-auto-columns: 1fr;
+            display: grid;
+        }
+    }
+}
+
+
+.trendcards{
+    &--card{
+        background-color: $cardbg;
+        border-radius: 10px;
+        &--thumb{
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+            overflow: hidden;
+        }
+        &--thumb img{
+            max-width: 100%;
+            vertical-align: middle;
+            display: inline-block;
+            transition: all 0.3s;
+        }
+        &--content{
+            padding: 30px;
+            &--title{
+                margin-bottom: 16px;
+                font-family: Inter, sans-serif;
+                font-size: 22px;
+                font-weight: 700;
+                line-height: 100%;
+            }
+            &--para{
+                font-size: 15px;
+                line-height: 100%;
+            }
+        }
+
+    }
+
+    &--card:hover img{
+        transform: scale(1.2);
+    }
+}
+
+
+.trendbtn{
+    @include buttnmix($btnhovercolor);
+    margin-top: 30px;
+    padding: 13px 23px;
+}
+
+
+.trendbtn:hover{
+    background-color: $secondarycolor;
+}
+
+@media screen and (max-width: 767px) {
+    .trendproduct {
+        padding-bottom: 40px;
+        &--container{
+            padding-left: 15px;
+            padding-right: 15px;
+            &--cardscontainer{
+                grid-template-columns: 1fr;
+            }
+        }
+       
+    }
+}

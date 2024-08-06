@@ -1,0 +1,43 @@
+@import "var.scss";
+
+@mixin flex($flexdir,$justify){
+    display: flex;
+    flex-direction: $flexdir;
+    justify-content: $justify;
+    align-items: center;
+}
+
+@mixin container($mar,$padd){
+    width: 100%;
+    max-width: 1360px;
+    margin: 0 $mar;
+    padding: 0 $padd;
+    overflow: hidden;
+}
+
+@mixin buttnmix($bgcolor){
+    cursor: pointer;
+    display: inline-block;
+    background-color:$bgcolor ;
+    padding: 15px 40px;
+    border-radius: 30px;
+    transition:all 0.2s;
+    &--txt{
+        text-decoration: none;
+        color: white;
+        font-family: Eina01, sans-serif;
+        font-size: 18px;
+        font-weight: 600;
+        line-height: 24px;
+    }
+}
+
+@mixin mixtitle(){
+    text-transform: capitalize;
+    margin-bottom: 40px;
+    font-family: Eina02, sans-serif;
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 100%;
+    margin-top: 20px;
+}

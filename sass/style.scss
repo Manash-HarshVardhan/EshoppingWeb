@@ -1,0 +1,185 @@
+@import "mixin.scss";
+@import "var.scss";
+
+//various sections
+@import "footer.scss";
+@import "shopcategory.scss";
+@import "choosebrand.scss";
+@import "get70off.scss";
+@import "services.scss";
+@import "get5perc.scss";
+@import "wallpapdisc.scss";
+@import "trendproduct.scss";
+@import "bestselling.scss";
+@import "msprod.scss";
+@import "tbdeals.scss";
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Inter, sans-serifI;
+}
+// navbar
+.header{
+    &--top{
+
+        height: 36px;
+        @include flex(row,space-between);
+        
+        color: $primarycolor;
+        
+        font-size: 12px;
+        background-color: $secondarycolor;
+        padding: 0 40px;
+        &--ph{
+            @include flex(row,space-between);
+            gap: 10px;
+           
+        }
+        &--engloc{
+            @include flex(row,space-between);
+            gap: 10px;
+            margin-right: 10px;
+        }
+    }
+    &--bottom{
+        height: 82px;
+        @include flex(row,space-around);
+        color: $secondarycolor;
+        
+        font-size: 16px;
+        background-color: $primarycolor;
+        padding: 0 10px;
+        &--links{
+            font-weight: 500;
+            @include flex(row,space-between);
+            list-style-type: none;
+            gap: 30px;
+        }
+        &--links>li>a{
+            text-decoration: none;
+            color: $txtcolor;
+        }
+        &--acccart{
+            @include flex(row,space-between);
+            gap: 40px;
+        }
+        &--search{
+            width: 320px;
+            height: 40px;
+            border: 1px solid $txtplaceholdercolor;
+            border-color: $txtplaceholdercolor;
+            border-radius: 50PX;
+            padding: 15px;
+        }
+        &--search:focus{
+            border-color: #007bff;
+            outline: none;
+        }
+        &--search::-webkit-search-clear-button {
+            display: none;
+          }
+    }
+}
+// home
+.home{
+    position: relative;
+    background: $homebackground;
+    height: 100vh;
+    &--img{
+        width: 100%;
+        object-fit: cover;
+    }
+    &--heading{
+        position: absolute;
+        
+        top: 27%;
+        left: 3.5%;
+        &--p{
+            margin-top: 50px;
+            max-width: 500px;
+            font-family: Inter, sans-serif;
+            font-size: 20px;
+            line-height: 145%;
+            color: $txtcolor;
+        }
+        &--h1{
+            margin-top: 0;
+            font-family: Eina02, sans-serif;
+            font-size: 64px;
+            font-weight: 700;
+            line-height: 74px;
+            color: $secondarycolor;
+        }
+        &--btn{
+            margin-top: 40px;
+            font-family: Eina02, sans-serif;
+            font-size: 16px;
+            color: $primarycolor;
+            
+            font-weight: 600;
+            // line-height: 24px;  
+            padding:18px 38px; 
+            background-color: $secondarycolor;
+            border: none;
+            border-radius:30px;
+           cursor: pointer;
+           transition: all 0.3s;
+        }
+        &--btn:hover{
+            background-color: $btnhovercolor;
+        }
+    }
+
+}
+
+.searchdiv{
+    position: relative;
+    &--searchicon{
+        position: absolute;
+        top: 25%;
+        right: 10%;
+    }
+}
+
+.bordertest{
+    border: 3px solid red;
+}
+
+
+
+@media screen and (max-width: 479px){
+    .header{
+        display: none;
+    }
+    .homesection{
+        padding-top: 80px;
+        padding-bottom: 80px;
+    }
+    .home{
+        height: 75vh;
+        padding-left: 15px;
+        padding-right: 15px;
+        &--img{
+            display: none;
+        }
+        &--heading{
+            &--h1{
+                font-size: 36px;
+                line-height: 42px;
+            }
+            &--p{
+                margin-top: 20px;
+                font-size: 16px;
+                line-height: 26px;
+                margin-bottom: 30px;
+            }
+            &--btn{
+                margin-top: 0;
+                padding: 10px 30px;
+            }
+        }
+    }
+   
+}

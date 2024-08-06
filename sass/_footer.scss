@@ -1,0 +1,119 @@
+@import "mixin.scss";
+@import "var.scss";
+
+.footer{
+    font-family: Inter, sans-serif;
+    font-size: 14px;
+    line-height: 20px;
+    &--top{
+        // height: 100vh;
+        // width: 92%;
+        // margin: auto;
+        border-top: 1px solid rgba(35, 31, 30, .2);
+        
+        padding-top: 60px;
+        padding-bottom: 30px;
+    }
+    &--bottom{
+        border-top: 1px solid rgba(35, 31, 30, .2);
+        font-family: Inter, sans-serif;
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 32px;
+        height: 17vh;
+        padding: 0 40px;
+        // border: 2px solid brown;
+        @include flex(row,space-around);
+        gap: 40px;
+        &--icons{
+            gap: 40px;
+            @include flex(row,space-around);
+            &--div{
+                gap: 6px;
+                @include flex(row,space-between);
+                transition: color 0.2s;
+                cursor: pointer;
+            }
+            &--div:hover{
+                color:$txthovercolor ;
+            }
+        }
+        &--termpriv{
+            gap: 40px;
+            @include flex(row,space-between);
+            & a{
+                text-decoration: none;
+                color: $txtcolor;
+                transition: color 0.2s;
+            }
+            & a:hover{
+                color: $txthovercolor;
+            }
+        }
+    }
+    &--column{
+        // grid-column-gap: 16px;
+        // grid-row-gap: 16px;
+        text-transform: capitalize;
+        grid-template-columns: 2.25fr 1fr 1fr 1fr 1fr;
+        // grid-auto-columns: 1fr;
+        // align-items: flex-start;
+        display: grid;
+        padding: 0 40px;
+        &--items{
+            display: flex;
+            flex-direction: column;
+            // gap: 30px;
+            line-height: 25px;
+        }
+        &--h2{
+            text-transform: capitalize;
+            margin-top: 0;
+            margin-bottom: 23px;
+            font-family: Inter, sans-serif;
+            font-size: 18px;
+            font-weight: 600;
+            line-height: 22px;
+        }
+    }
+    & ul{
+        list-style-type: none;
+    }
+    & ul>li{
+        transition: all 0.3s;
+    }
+    & ul>li:hover{
+        color: $txthovercolor;
+        margin-left: 10px;
+    }
+
+    &--logo{
+        width: 175px;
+        height: 44px;
+        margin-bottom: 35px;
+    }
+    &--para{
+        max-width: 385px;
+        font-size: 14px;
+        line-height: 150%;
+        margin-bottom: 40px;
+    }
+
+}
+
+.footer{
+    &--paymentlogo{
+        display: grid;
+        grid-template-columns: 58px 58px 58px 58px;
+        grid-column-gap: 6px;
+        grid-row-gap: 10.34px;
+        &--single{
+            min-height: 40px;
+            min-width: 58px;
+            border: .5px solid #d9d9d9;
+            border-radius: 5px;
+            @include flex(row,center);
+        }
+    }
+}
+

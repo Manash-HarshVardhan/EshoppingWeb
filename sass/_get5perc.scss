@@ -1,0 +1,77 @@
+@import "mixin.scss";
+@import "var.scss";
+
+.get5perc{
+    background-color:$cashbkbanner ;
+    
+    &--container{
+        max-width: 1360px;
+        margin:0 auto;
+        padding: 0 40px;
+        overflow: hidden;
+        &--content{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 62px 0;
+            text-align: left;
+            padding: 0 120px;
+            &--title{
+                text-transform: capitalize;
+                margin-bottom: 18px;
+                font-size: 52px;
+                font-family: Inter, sans-serif;
+                font-weight: 700;
+                line-height: 120%;
+                margin-top: 70px;
+            }
+            &--para{
+                font-family: Inter, sans-serif;
+                font-size: 20px;
+                line-height: 145%;
+                // margin-bottom: 30px;
+                font-weight: 500;
+            }
+            &--thumbnail{
+                margin-top: 40px;
+                position: relative;
+            }
+        }
+    }
+}
+.contthumb{
+    &--card1{
+        z-index: 2;
+        position: absolute;
+        top: -37px;
+        bottom: auto;
+        left: -22px;
+        right: auto;
+        transform: rotate(-30.6deg);
+    }
+    &--card2{
+        z-index: 1;
+        position: absolute;
+        top: -18px;
+        bottom: auto;
+        left: -6px;
+        right: auto;
+        transform: rotate(-21.6deg);
+    }
+    &--card3{
+        transform: rotate(-15deg);
+    }
+}
+
+.btn{
+    @include buttnmix($secondarycolor);
+    
+    
+    margin-top: 35px;
+    margin-bottom: 70px;
+    
+    
+}
+.btn:hover{
+    background-color: $btnhovercolor;
+}
