@@ -57,6 +57,8 @@
   color: #fb7164;
 }
 .footer--column {
+  grid-column-gap: 16px;
+  grid-row-gap: 16px;
   text-transform: capitalize;
   grid-template-columns: 2.25fr 1fr 1fr 1fr 1fr;
   display: grid;
@@ -115,6 +117,19 @@
   align-items: center;
 }
 
+@media screen and (max-width: 479px) {
+  .footer--column {
+    grid-row-gap: 10px;
+    grid-template-rows: auto;
+    grid-template-columns: 1fr;
+  }
+  .footer--bottom {
+    flex-wrap: wrap;
+    justify-content: start;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
 .category {
   padding-top: 80px;
 }
@@ -493,6 +508,32 @@
   background-color: #231F1E;
 }
 
+@media screen and (max-width: 479px) {
+  .get5perc--container {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  .get5perc--container--content {
+    padding-left: 20px;
+    padding-right: 10px;
+  }
+  .get5perc--container--content--title {
+    font-size: 26px;
+    margin-bottom: 18px;
+  }
+  .get5perc--container--content--para {
+    font-size: 14px;
+    margin-bottom: 20px;
+  }
+  .btn {
+    padding: 10px 30px;
+    margin-top: 5px;
+    margin-bottom: 60px;
+  }
+  .contthumb {
+    display: none;
+  }
+}
 .wallpapdiscount {
   padding-top: 95px;
   padding-bottom: 95px;
@@ -503,7 +544,7 @@
   z-index: -1;
   width: 100%;
   height: 100%;
-  background-image: url("/img/backbanner.png");
+  background-image: url("/img/backbgbanner.png");
   background-position: 50%;
   background-repeat: no-repeat;
   background-size: cover;
@@ -1112,6 +1153,9 @@
 .header--bottom--search::-webkit-search-clear-button {
   display: none;
 }
+.header--mobile {
+  display: none;
+}
 
 .home {
   position: relative;
@@ -1175,15 +1219,44 @@
 }
 
 @media screen and (max-width: 479px) {
-  .header {
+  .header--top {
+    flex-direction: column;
+    height: auto;
+    gap: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  .header--top--para {
+    display: none;
+  }
+  .header--top--engloc {
+    gap: 30px;
+  }
+  .header--bottom--logo {
+    display: none;
+  }
+  .header--bottom--links {
+    display: none;
+  }
+  .header--bottom--acccart {
+    display: none;
+  }
+  .header--mobile {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+  }
+  .searchdiv {
     display: none;
   }
   .homesection {
-    padding-top: 80px;
-    padding-bottom: 80px;
+    padding-bottom: 45px;
   }
   .home {
-    height: 75vh;
+    height: 65vh;
     padding-left: 15px;
     padding-right: 15px;
   }

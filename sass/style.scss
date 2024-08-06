@@ -22,6 +22,7 @@
 }
 // navbar
 .header{
+
     &--top{
 
         height: 36px;
@@ -80,6 +81,10 @@
         &--search::-webkit-search-clear-button {
             display: none;
           }
+    }
+
+    &--mobile{
+        display: none;
     }
 }
 // home
@@ -151,14 +156,49 @@
 
 @media screen and (max-width: 479px){
     .header{
+        &--top{
+            flex-direction: column;
+            height: auto;
+            gap: 20px;
+            padding-top: 10px;
+             padding-bottom: 10px;
+             &--para{
+                display: none;
+             }
+             &--engloc{
+                gap: 30px;
+             }
+        }
+        
+        &--bottom{
+            &--logo{
+                display: none;
+            }
+            &--links{
+                display: none;
+            }
+           
+            &--acccart{
+                display: none;
+            }
+
+        }
+        &--mobile{
+            width: 100%;
+            @include flex(row,space-between);
+            padding: 0 20px;
+        }
+
+    }
+    .searchdiv{
         display: none;
     }
     .homesection{
-        padding-top: 80px;
-        padding-bottom: 80px;
+        // padding-top: 80px;
+        padding-bottom: 45px;
     }
     .home{
-        height: 75vh;
+        height: 65vh;
         padding-left: 15px;
         padding-right: 15px;
         &--img{
